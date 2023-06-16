@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class riwayat extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['provider','nominal', 'tanggal'];
 }
