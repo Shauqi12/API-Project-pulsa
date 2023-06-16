@@ -27,13 +27,14 @@ class penggunaController extends Controller
         $penggunas = pengguna::create($cek);
 
         return response()->json([
-            "message"=> "berhasil menambah Product",
+            "message"=> "berhasil menambah ",
             "status" => 200,
             "display" => $penggunas
         ]);
     }
 
-    public function edit(Request $request, $id){
+    //edit data
+    public function update(Request $request, $id){
         $cek = $request->validate([
             'nama' => "required",
             'saldo' => "required|numeric",
@@ -41,7 +42,7 @@ class penggunaController extends Controller
 
         $user = pengguna::find($id);
         $user->nama = $cek['nama'];
-        $user->desc = $cek['saldo'];
+        $user->saldo = $cek['saldo'];
 
         return response()->json([
             "message"=> "berhasil mengupdate",

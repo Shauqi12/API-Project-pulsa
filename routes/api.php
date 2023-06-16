@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/riwayat',[riwayatController::class, 'index']);
 Route::get('/pengguna',[penggunaController::class, 'pengguna']);
+Route::post('/topup',[riwayatController::class, 'add']);
 Route::post('/pengguna',[penggunaController::class, 'add']);
-Route::put('/edit/{id}',[penggunaController::class, 'edit']);
+Route::put('/edit/{id}',[penggunaController::class, 'update']);
 Route::delete('/delete/{id}',[penggunaController::class, 'delete']);
 /*
 |--------------------------------------------------------------------------
