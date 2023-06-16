@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\riwayatController;
+use App\Http\Controllers\penggunaController;
+use App\Models\pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/riwayat',[riwayatController::class, 'index']);
+Route::get('/pengguna',[penggunaController::class, 'pengguna']);
 
 /*
 |--------------------------------------------------------------------------
