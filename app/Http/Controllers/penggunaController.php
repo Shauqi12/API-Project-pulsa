@@ -29,7 +29,34 @@ class penggunaController extends Controller
         return response()->json([
             "message"=> "berhasil menambah Product",
             "status" => 200,
-            "products" => $penggunas
+            "display" => $penggunas
+        ]);
+    }
+
+    public function edit(Request $request, $id){
+        $cek = $request->validate([
+            'nama' => "required",
+            'saldo' => "required|numeric",
+        ]);
+
+        $user = pengguna::find($id);
+        $user->nama = $cek['nama'];
+        $user->desc = $cek['saldo'];
+
+        return response()->json([
+            "message"=> "berhasil mengupdate",
+            "status" => 200,
+            "display" => $id
+        ]);
+    }
+
+    public function delete($id){
+        $user = pengguna::find($id);
+        $user->delete();
+
+        return response()->json([
+            "message"=> "berhasil dihapus",
+            "status" => 200,
         ]);
     }
 
