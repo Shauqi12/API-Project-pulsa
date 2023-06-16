@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class riwayat extends Model
+class ussr extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-    protected $fillable = ['provider','nominal', 'tanggal'];
 }
