@@ -18,19 +18,20 @@ class riwayatController extends Controller
         ]);
     }
 
+    //top up pulsa
     public function add(Request $request){
         $cek = $request->validate([
-            'nama' => "required",
-            'desc' => "required",
-            'harga' => "required|numeric",
+            'provider' => "required",
+            'tanggal' => "required",
+            'nominal' => "required|numeric",
         ]);
 
-        $products = riwayat::create($cek);
+        $penggunas = riwayat::create($cek);
 
         return response()->json([
-            "message"=> "berhasil menambah Product",
+            "message"=> "berhasil menambah",
             "status" => 200,
-            "products" => $products
+            "display" => $penggunas
         ]);
     }
 
