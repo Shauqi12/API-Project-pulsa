@@ -46,7 +46,7 @@ class penggunaController extends Controller
         return response()->json([
             "message"=> "berhasil mengupdate",
             "status" => 200,
-            "display" => $id
+            "display" => $user
         ]);
     }
 
