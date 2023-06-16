@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pengguna ;
+use App\Models\User ;
 use Illuminate\Http\Request;
 
 class penggunaController extends Controller
@@ -16,4 +17,20 @@ class penggunaController extends Controller
             "display" => $user
         ]);
     }
+
+    public function add(Request $request){
+        $cek = $request->validate([
+            'nama' => "required",
+            'saldo' => "required|numeric",
+        ]);
+
+        $penggunas = pengguna::create($cek);
+
+        return response()->json([
+            "message"=> "berhasil menambah Product",
+            "status" => 200,
+            "products" => $penggunas
+        ]);
+    }
+
 }

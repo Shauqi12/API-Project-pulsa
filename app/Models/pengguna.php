@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class pengguna extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['saldo'];
+    public $timestamps = false;
+    protected $fillable = ['nama','saldo'];
 }

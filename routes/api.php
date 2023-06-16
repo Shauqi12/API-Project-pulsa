@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/riwayat',[riwayatController::class, 'index']);
 Route::get('/pengguna',[penggunaController::class, 'pengguna']);
+Route::post('/pengguna',[penggunaController::class, 'add']);
 
 /*
 |--------------------------------------------------------------------------
