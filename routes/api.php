@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/riwayat',[riwayatController::class, 'index']);
 Route::get('/pengguna',[penggunaController::class, 'pengguna']);
 Route::post('/pengguna',[penggunaController::class, 'add']);
-
+Route::put('/edit/{id}',[penggunaController::class, 'edit']);
+Route::delete('/delete/{id}',[penggunaController::class, 'delete']);
 /*
 |--------------------------------------------------------------------------
 | API Routes
